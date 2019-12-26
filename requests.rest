@@ -1,0 +1,31 @@
+@host = http://localhost:9999
+
+###
+
+GET {{host}}/posts
+
+###
+
+POST {{host}}/posts 
+Content-Type: application/json
+
+{
+"id": 0, "type": "regular", "value": "New Post"
+}
+
+###
+
+POST {{host}}/posts 
+Content-Type: application/json
+
+{
+"id": 1, "type": "Обычный", "value": "Updated post"
+}
+
+###
+
+POST {{host}}/posts/3/likes
+
+### 
+
+DELETE {{host}}/posts/3/likes
