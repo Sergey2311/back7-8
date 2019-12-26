@@ -8,7 +8,7 @@ const posts = [
         id: nextId++,
         type: 'regular',
         value: 'First post',
-        likes: 3,
+        likes: 0,
     },
     {
         id: nextId++,
@@ -74,7 +74,7 @@ app.post('/posts/:id/likes', (req, res) => {
     res.send(posts);
 });
 
-app.delete('/posts/:id/dislikes', (req, res) => {
+app.delete('/posts/:id/likes', (req, res) => {
     const id = Number(req.params['id']);
     const index = posts.findIndex(o => o.id === id)
 
